@@ -4,13 +4,13 @@
 Created a reccomendation system using user-to-user collaborative filtering to suggest new movies to users. 
 
 ## Data
-user_reviews.csv
+**user_reviews.csv**
 - rows represent users of the system 
 - columns represent products 
 - cells represent a numerical rating from 1 to 5 of a product given by a user.
 - value of 0 represents a missing rating—a movie the user hasn't rated yet.
 
-movie_genres.csv
+**movie_genres.csv**
 - rows represent the movies in the columns of  user_reviews.csv. 
 - each row represents genre features of a single movie. 
 
@@ -32,17 +32,17 @@ For movies that are not seen and rated by users, the algorithm takes a weighted 
 The predicted rating is calculated by:
  1. Calculate the user’s baseline rating for the specific movie
  2. Loop through all neighbours 
- - Calculate neighbour’s baseline rating for the movie 
- - Adjust rating by subtracting the baseline and multiplying the similarity between the user and the neighbour 
- - Sum the adjusted and weighted ratings 
+    - Calculate neighbour’s baseline rating for the movie 
+    - Adjust rating by subtracting the baseline and multiplying the similarity between the user and the neighbour 
+    - Sum the adjusted and weighted ratings 
 3. Sort the predicted ratings in descending order and select the first 5 movies
 
 ## Evaluation
-Strengths
+**Strengths**
 - Reccomendations are specific to each user using the behaviour of users
 - Less data needed to generate recommendations (only the user_reviews.csv file was used as collaborative filtering solely relies on the user’s behaviour to make recommendations)
 
-Weaknesses 
+**Weaknesses** 
 - User’s who are new to the platform/ have not watched many movies may receive a lower quality of recommendations as less data is available to calculate the user’s baseline rating for a movie and consequently the cosine similarity between target user and neighbours.
 - Data privacy concerns may arise as the algorithm requires access to individual user data (movies watched by the user), and users may not be comfortable sharing their watch history.
 
